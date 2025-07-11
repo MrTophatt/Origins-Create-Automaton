@@ -1,0 +1,13 @@
+{
+	"name": "Mechanical Drill",
+	"description": "Diggy Diggy Hole!",
+	"powers": [
+        "create_automaton:andesite/drill/drill"
+	],
+	"icon": {
+		"item": "create:mechanical_drill"
+	},
+	"order": 1,
+	"impact": 3,
+	"hidden": false
+}

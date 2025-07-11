@@ -1,0 +1,13 @@
+{
+	"name": "Item Vault",
+	"description": "Items in your inventory will be kept upon deactivation. Armor worn and items in the offhand are not kept.",
+	"powers": [
+        "create_automaton:extras/vault"
+	],
+	"icon": {
+		"item": "create:item_vault"
+	},
+	"order": 1,
+	"impact": 3,
+	"hidden": false
+}

@@ -1,0 +1,27 @@
+{
+    "order": 1,
+    "origins": [
+        {
+            "condition": {
+                "type": "origins:origin",
+                "origin": "create_automaton:automaton"
+            },
+            "origins": [
+                "create_automaton:andesite/casing",
+                "create_automaton:andesite/crank",
+                "create_automaton:andesite/toolbox",
+                "create_automaton:andesite/press",
+                "create_automaton:andesite/fan",
+                "create_automaton:andesite/drill",
+                "create_automaton:andesite/ejector"
+            ]
+        }
+    ],
+    "allow_random": true,
+    "exclude_random": [
+        "create_automaton:andesite/casing"
+    ],
+    "name": "Andesite Age",
+    "missing_name": "None",
+    "missing_description": "You currently do not have an andesite age part"
+}

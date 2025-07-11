@@ -1,0 +1,13 @@
+{
+	"name": "Super Glue",
+	"description": "you can stick to, and climb up walls.",
+	"powers": [
+        "create_automaton:extras/glue"
+	],
+	"icon": {
+		"item": "create:super_glue"
+	},
+	"order": 1,
+	"impact": 3,
+	"hidden": false
+}

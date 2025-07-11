@@ -1,0 +1,13 @@
+{
+	"name": "Train Casing",
+	"description": "You gain less stress whenever you take damage.",
+	"powers": [
+        "create_automaton:extras/train-casing"
+	],
+	"icon": {
+		"item": "create:railway_casing"
+	},
+	"order": 1,
+	"impact": 2,
+	"hidden": false
+}

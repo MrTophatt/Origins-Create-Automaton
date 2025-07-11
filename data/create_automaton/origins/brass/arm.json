@@ -1,0 +1,13 @@
+{
+	"name": "Mechanical Arm",
+	"description": "Busy Hands.",
+	"powers": [
+        "create_automaton:brass/arm/reach"
+	],
+	"icon": {
+		"item": "create:mechanical_arm"
+	},
+	"order": 1,
+	"impact": 2,
+	"hidden": false
+}

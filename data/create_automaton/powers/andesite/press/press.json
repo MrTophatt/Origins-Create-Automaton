@@ -1,0 +1,188 @@
+{
+    "name": "Bonk!",
+    "description": "You can manually press items in your main hand",
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:play_sound",
+                "sound": "create:mechanical_press_activation",
+                "volume": 0.2
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "automaton:stress_stress-meter",
+                "change": 30
+            },
+            {
+                "type": "origins:if_else_list",
+                "actions": [
+                    {
+                        "condition": {
+                            "type": "origins:inventory",
+                            "slot": "weapon.mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:sugar_cane"
+                                }
+                            }
+                        },
+                        "action": {
+                            "type": "origins:give",
+                            "stack": {
+                                "item": "minecraft:paper"
+                            }
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:inventory",
+                            "slot": "weapon.mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:dirt"
+                                }
+                            }
+                        },
+                        "action": {
+                            "type": "origins:give",
+                            "stack": {
+                                "item": "minecraft:dirt_path"
+                            }
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:inventory",
+                            "slot": "weapon.mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:grass_block"
+                                }
+                            }
+                        },
+                        "action": {
+                            "type": "origins:give",
+                            "stack": {
+                                "item": "minecraft:dirt_path"
+                            }
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:inventory",
+                            "slot": "weapon.mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:copper_ingot"
+                                }
+                            }
+                        },
+                        "action": {
+                            "type": "origins:give",
+                            "stack": {
+                                "item": "create:copper_sheet"
+                            }
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:inventory",
+                            "slot": "weapon.mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:iron_ingot"
+                                }
+                            }
+                        },
+                        "action": {
+                            "type": "origins:give",
+                            "stack": {
+                                "item": "create:iron_sheet"
+                            }
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:inventory",
+                            "slot": "weapon.mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:gold_ingot"
+                                }
+                            }
+                        },
+                        "action": {
+                            "type": "origins:give",
+                            "stack": {
+                                "item": "create:golden_sheet"
+                            }
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:inventory",
+                            "slot": "weapon.mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "create:brass_ingot"
+                                }
+                            }
+                        },
+                        "action": {
+                            "type": "origins:give",
+                            "stack": {
+                                "item": "create:brass_sheet"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "origins:modify_inventory",
+                "slot": "weapon.mainhand",
+                "limit": 1,
+                "item_action": {
+                    "type": "origins:consume"
+                }
+            }
+        ]
+    },
+    "cooldown": 15,
+    "hud_render": {
+        "should_render": false
+    },
+    "key": {
+        "key": "key.origins.primary_active",
+        "continuous": true
+    },
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:inventory",
+                "slot": "weapon.mainhand",
+                "item_condition": {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "tag": "automaton:pressable"
+                    }
+                }
+            },
+            {
+                "type": "origins:resource",
+                "resource": "automaton:stress_overstress-toggle",
+                "comparison": "==",
+                "compare_to": 0
+            }
+        ]
+    }
+}

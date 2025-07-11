@@ -1,0 +1,14 @@
+{
+	"name": "Encased Fan",
+	"description": "Wind Maker.",
+	"powers": [
+        "create_automaton:andesite/fan/hover",
+        "create_automaton:andesite/fan/speed"
+	],
+	"icon": {
+		"item": "create:encased_fan"
+	},
+	"order": 1,
+	"impact": 3,
+	"hidden": false
+}

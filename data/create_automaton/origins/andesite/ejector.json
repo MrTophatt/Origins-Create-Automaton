@@ -1,0 +1,14 @@
+{
+	"name": "Weighted Ejector",
+	"description": "Springboard Champion.",
+	"powers": [
+        "create_automaton:andesite/ejector/launch",
+        "create_automaton:andesite/ejector/soft-landing"
+	],
+	"icon": {
+		"item": "create:weighted_ejector"
+	},
+	"order": 1,
+	"impact": 2,
+	"hidden": false
+}

@@ -1,0 +1,46 @@
+{
+    "name": "Super Smelter",
+    "description": "Instantly smelt items in your main hand.",
+    "type": "origins:active_self",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/star.png",
+            "text": "4 stress/item smelted"
+        },
+        {
+            "type": "origins:keybind",
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Smelt items in your mainhand using %s"
+        }
+    ],
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:modify_inventory",
+                "slot": "weapon.mainhand",
+                "process_mode": "items",
+                "item_action": {
+                    "type": "origins:modify",
+                    "modifier": "create_automaton:smelt"
+                }
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "function create_automaton:item-count/add-stress"
+            }
+        ]
+    },
+    "key": {
+        "key": "key.saveToolbarActivator",
+        "continuous": true
+    },
+    "condition": {
+        "type": "origins:equipped_item",
+        "equipment_slot": "mainhand",
+        "item_condition": {
+            "type": "origins:smeltable"
+        }
+    }
+}

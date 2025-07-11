@@ -1,0 +1,13 @@
+{
+	"name": "Mechanical Crafter",
+	"description": "Assembly.",
+	"powers": [
+        "create_automaton:brass/crafting/crafter"
+	],
+	"icon": {
+		"item": "create:mechanical_crafter"
+	},
+	"order": 1,
+	"impact": 2,
+	"hidden": false
+}

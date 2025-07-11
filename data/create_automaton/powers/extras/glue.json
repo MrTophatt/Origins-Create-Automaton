@@ -1,0 +1,10 @@
+{
+    "hidden": true,
+    "name": "Sticky Fingers",
+    "description": "you can stick and climb any block",
+    "type": "origins:climbing",
+    "allow_holding": true,
+    "condition": {
+        "type": "origins:collided_horizontally"
+    }
+}

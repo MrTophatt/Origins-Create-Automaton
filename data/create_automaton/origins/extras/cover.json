@@ -1,0 +1,12 @@
+{
+	"name": "Cover",
+	"description": "Covers the spot where you would've had a doodad. Does nothing.",
+	"powers": [
+	],
+	"icon": {
+		"item": "create:crafter_slot_cover"
+	},
+	"order": 1,
+	"impact": 0,
+	"hidden": false
+}

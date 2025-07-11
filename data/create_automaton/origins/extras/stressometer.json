@@ -1,0 +1,13 @@
+{
+	"name": "Stressometer",
+	"description": "Your stress level is displayed in a numerical value instead of a bar.",
+	"powers": [
+        "create_automaton:extras/stressometer"
+	],
+	"icon": {
+		"item": "create:stressometer"
+	},
+	"order": 1,
+	"impact": 1,
+	"hidden": false
+}

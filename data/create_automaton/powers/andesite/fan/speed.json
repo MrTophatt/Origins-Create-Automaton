@@ -1,0 +1,10 @@
+{
+    "name": "Light Feet",
+    "description": "You feel much lighter and walk a little faster.",
+    "type": "origins:attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.movement_speed",
+        "value": 0.15,
+        "operation": "multiply_total"
+    }
+}

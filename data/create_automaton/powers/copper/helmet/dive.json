@@ -1,0 +1,45 @@
+{
+    "name": "Water Proof",
+    "description": "you can breathe and see underwater perfectly fine, and swim a little faster.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/star.png",
+            "text": "Constant 120 stress used"
+        }
+    ],
+    "type": "origins:multiple",
+
+    "stress": {
+        "type": "origins:action_on_callback",
+        "entity_action_gained": {
+            "type": "origins:change_resource",
+            "resource": "create_automaton:stress_constant-stress",
+            "change": 120
+        },
+        "execute_chosen_when_orb": true
+    },
+
+    "air": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:gain_air",
+            "value": 20
+        },
+        "interval": 1
+    },
+
+    "swim": {
+        "type": "origins:modify_swim_speed",
+        "modifier": {
+            "operation": "addition",
+            "value": 0.005
+        }
+    },
+
+    "no-water-vision": {
+        "type": "origins:modify_camera_submersion",
+        "from": "water",
+        "to": "none"
+    }
+}

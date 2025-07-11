@@ -1,0 +1,36 @@
+{
+    "name": "Format Change",
+    "description": "Change clock format between 12-hour and 24-hour.",
+    "badges": [
+        {
+            "type": "origins:keybind",
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Toggle between time formats with %s"
+        }
+    ],
+    "type": "origins:multiple",
+
+    "display-time": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "function create_automaton:clock/display"
+        },
+        "interval": 1
+    },
+
+    "format": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "function create_automaton:clock/toggle-format"
+        },
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.spectatorOutlines"
+        }
+    }
+}

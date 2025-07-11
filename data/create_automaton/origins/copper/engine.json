@@ -1,0 +1,13 @@
+{
+	"name": "Steam Engine",
+	"description": "Full Steam.",
+	"powers": [
+        "create_automaton:copper/engine/destress"
+	],
+	"icon": {
+		"item": "create:steam_engine"
+	},
+	"order": 1,
+	"impact": 2,
+	"hidden": false
+}

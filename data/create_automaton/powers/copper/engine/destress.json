@@ -1,0 +1,46 @@
+{
+    "name": "De-Stress",
+    "description": "Manually de-stress yourself instead of just waiting.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/star.png",
+            "text": "De-stresses 200 stress"
+        },
+        {
+            "type": "origins:keybind",
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "De-stress using %s"
+        }
+    ],
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:change_resource",
+                "resource": "create_automaton:stress_stress-meter",
+                "change": -200
+            },
+            {
+                "type": "origins:play_sound",
+                "sound": "create:steam",
+                "pitch": 0.8
+            }
+        ]
+    },
+    "cooldown": 400,
+    "hud_render": {
+        "sprite_location": "origins:textures/gui/resource_bar.png",
+        "bar_index": 5
+    },
+    "key": {
+        "key": "key.origins.secondary_active"
+    },
+    "condition": {
+        "type": "origins:resource",
+        "resource": "create_automaton:stress_overstress-toggle",
+        "comparison": "==",
+        "compare_to": 0
+    }
+}

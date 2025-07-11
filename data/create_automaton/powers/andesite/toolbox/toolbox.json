@@ -1,0 +1,19 @@
+{
+    "name": "Toolbox",
+    "description": "You have access to a 3x3 inventory that you keep upon death.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/star.png",
+            "text": "Uses no stress, so you can use it even while overstressed"
+        },
+        {
+            "type": "origins:keybind",
+            "sprite": "origins:textures/gui/badge/toggle.png",
+            "text": "Open your toolbox using %s"
+        }
+    ],
+    "type": "origins:inventory",
+    "title": "Toolbox",
+    "drop_on_death": false
+}

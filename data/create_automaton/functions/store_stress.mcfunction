@@ -1,0 +1,2 @@
+execute store result score @s stress_meter run resource get @s create_automaton:stress_stress-meter
+execute store result score @s constant_stress run resource get @s create_automaton:stress_constant-stress

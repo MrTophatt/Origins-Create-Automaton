@@ -1,0 +1,13 @@
+{
+	"name": "Hand Crank",
+	"description": "Workout Session.",
+	"powers": [
+        "create_automaton:andesite/crank/crank"
+	],
+	"icon": {
+		"item": "create:hand_crank"
+	},
+	"order": 1,
+	"impact": 1,
+	"hidden": false
+}

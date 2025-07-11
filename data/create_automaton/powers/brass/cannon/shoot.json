@@ -1,0 +1,87 @@
+{
+    "name": "Potato Cannon",
+    "description": "Shoot an infinite amount of potatoes... where do they come from?",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/star.png",
+            "text": "Uses 65 stress/shot"
+        },
+        {
+            "type": "origins:keybind",
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Shoot a potato using %s"
+        }
+    ],
+    "type": "apugli:custom_projectile",
+    "entity_id": "create_automaton:potato_projectile",
+    "texture_url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c1/Potato_JE3_BE2.png/revision/latest?cb=20190430222727",
+    "entity_action_before_firing": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:play_sound",
+                "sound": "create:fwoomp"
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "create_automaton:stress_stress-meter",
+                "change": 65
+            }
+        ]
+    },
+    "bientity_action_on_miss": {
+        "type": "origins:target_action",
+        "action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:play_sound",
+                    "sound": "create:potato_hit_compounded_1",
+                    "volume": 0.5
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "create:potato_hit",
+                    "volume": 0.5
+                }
+            ]
+        }
+    },
+    "owner_target_bientity_action_on_hit": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:target_action",
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:play_sound",
+                            "sound": "create:potato_hit_compounded_1",
+                            "volume": 0.5
+                        },
+                        {
+                            "type": "origins:play_sound",
+                            "sound": "create:potato_hit",
+                            "volume": 0.5
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "origins:damage",
+                "amount": 5,
+                "damage_type": "create:potato_cannon"
+            }
+        ]
+    },
+    "count": 1,
+    "divergence": 0,
+    "speed": 2.5,
+    "key": {
+        "key": "key.saveToolbarActivator",
+        "continuous": true
+    },
+    "cooldown": 15
+}

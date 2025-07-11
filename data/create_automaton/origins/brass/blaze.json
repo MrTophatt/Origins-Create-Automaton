@@ -1,0 +1,13 @@
+{
+	"name": "Blaze Burner",
+	"description": "Sentient Fireplace.",
+	"powers": [
+        "create_automaton:brass/blaze/smelt"
+	],
+	"icon": {
+		"item": "create:blaze_burner"
+	},
+	"order": 1,
+	"impact": 3,
+	"hidden": false
+}

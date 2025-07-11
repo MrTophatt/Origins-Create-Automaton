@@ -1,0 +1,12 @@
+{
+	"name": "Copper Casing",
+	"description": "The building block of the copper age, but alone is useless.",
+	"powers": [
+	],
+	"icon": {
+		"item": "create:copper_casing"
+	},
+	"order": 1,
+	"impact": 0,
+	"hidden": false
+}

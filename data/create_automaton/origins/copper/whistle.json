@@ -1,0 +1,13 @@
+{
+	"name": "Steam Whistle",
+	"description": "Voice of an Angel.",
+	"powers": [
+        "create_automaton:copper/whistle/call"
+	],
+	"icon": {
+		"item": "create:steam_whistle"
+	},
+	"order": 1,
+	"impact": 3,
+	"hidden": false
+}

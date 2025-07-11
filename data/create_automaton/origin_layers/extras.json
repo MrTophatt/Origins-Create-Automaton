@@ -1,0 +1,29 @@
+{
+    "order": 4,
+    "origins": [
+        {
+            "condition": {
+                "type": "origins:origin",
+                "origin": "create_automaton:automaton"
+            },
+            "origins": [
+                "create_automaton:extras/cover",
+                "create_automaton:extras/stressometer",
+                "create_automaton:extras/seat",
+                "create_automaton:extras/clock",
+                "create_automaton:extras/casing",
+                "create_automaton:extras/glue",
+                "create_automaton:extras/flywheel",
+                "create_automaton:extras/clutch",
+                "create_automaton:extras/vault"
+            ]
+        }
+    ],
+    "allow_random": true,
+    "exclude_random": [
+        "create_automaton:extras/cover"
+    ],
+    "name": "Extra Doodads",
+    "missing_name": "None",
+    "missing_description": "You currently do not have a doodad part"
+}

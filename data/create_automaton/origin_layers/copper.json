@@ -1,0 +1,26 @@
+{
+    "order": 2,
+    "origins": [
+        {
+            "condition": {
+                "type": "origins:origin",
+                "origin": "create_automaton:automaton"
+            },
+            "origins": [
+                "create_automaton:copper/casing",
+                "create_automaton:copper/engine",
+                "create_automaton:copper/helmet",
+                "create_automaton:copper/tank",
+                "create_automaton:copper/valve",
+                "create_automaton:copper/whistle"
+            ]
+        }
+    ],
+    "allow_random": true,
+    "exclude_random": [
+        "create_automaton:copper/casing"
+    ],
+    "name": "Copper Age",
+    "missing_name": "None",
+    "missing_description": "You currently do not have a copper age part"
+}

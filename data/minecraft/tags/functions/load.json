@@ -1,0 +1,7 @@
+{
+  "values": [
+    "create_automaton:clock/load",
+    "create_automaton:stress-setup",
+    "create_automaton:item-count/item-count-setup"
+  ]
+}

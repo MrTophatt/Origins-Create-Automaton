@@ -1,0 +1,13 @@
+{
+	"name": "Rotation Speed Controller",
+	"description": "Engineers hate this simple trick!",
+	"powers": [
+        "create_automaton:brass/speed-controller/speed"
+	],
+	"icon": {
+		"item": "create:rotation_speed_controller"
+	},
+	"order": 1,
+	"impact": 3,
+	"hidden": false
+}

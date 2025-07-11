@@ -1,0 +1,13 @@
+{
+	"name": "Seat",
+	"description": "Other players can right click you and ride you!",
+	"powers": [
+        "create_automaton:extras/seat"
+	],
+	"icon": {
+		"item": "create:red_seat"
+	},
+	"order": 1,
+	"impact": 1,
+	"hidden": false
+}

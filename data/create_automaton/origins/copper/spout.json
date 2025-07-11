@@ -1,0 +1,12 @@
+{
+	"name": "Spout",
+	"description": "Sploosh.",
+	"powers": [
+	],
+	"icon": {
+		"item": "create:spout"
+	},
+	"order": 1,
+	"impact": 2,
+	"hidden": false
+}

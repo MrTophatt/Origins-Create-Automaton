@@ -1,0 +1,13 @@
+{
+	"name": "Toolbox",
+	"description": "A trusty box to hold your stuff.",
+	"powers": [
+        "create_automaton:andesite/toolbox/toolbox"
+	],
+	"icon": {
+		"item": "create:brown_toolbox"
+	},
+	"order": 1,
+	"impact": 2,
+	"hidden": false
+}

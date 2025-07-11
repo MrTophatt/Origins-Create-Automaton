@@ -1,0 +1,13 @@
+{
+	"name": "Flywheel",
+	"description": "Increase the rate of stress loss when overstressed.",
+	"powers": [
+        "create_automaton:extras/flywheel"
+	],
+	"icon": {
+		"item": "create:flywheel"
+	},
+	"order": 1,
+	"impact": 2,
+	"hidden": false
+}

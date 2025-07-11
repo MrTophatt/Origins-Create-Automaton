@@ -1,0 +1,13 @@
+{
+	"name": "Potato Cannon",
+	"description": "Fwoomp!",
+	"powers": [
+        "create_automaton:brass/cannon/shoot"
+	],
+	"icon": {
+		"item": "create:potato_cannon"
+	},
+	"order": 1,
+	"impact": 3,
+	"hidden": false
+}

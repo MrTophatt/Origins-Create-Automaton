@@ -1,0 +1,29 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+
+    "no-insomnia": {
+        "type": "origins:modify_insomnia_ticks",
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        }
+    },
+
+    "disable-regen": {
+        "type": "origins:disable_regen"
+    },
+
+    "effect-immunity": {
+        "type": "origins:effect_immunity",
+        "effects": [
+            "minecraft:regeneration",
+            "minecraft:instant_health",
+            "minecraft:wither",
+            "minecraft:poison",
+            "minecraft:health_boost",
+            "minecraft:hunger",
+            "minecraft:saturation"
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+{
+	"name": "Display Link",
+	"description": "Big Data.",
+	"powers": [
+		"create_automaton:brass/display/info"
+	],
+	"icon": {
+		"item": "create:display_link"
+	},
+	"order": 1,
+	"impact": 1,
+	"hidden": false
+}

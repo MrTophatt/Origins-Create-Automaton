@@ -1,0 +1,12 @@
+{
+	"name": "Andesite Casing",
+	"description": "The building block of the andesite age, but alone is useless.",
+	"powers": [
+	],
+	"icon": {
+		"item": "create:andesite_casing"
+	},
+	"order": 1,
+	"impact": 0,
+	"hidden": false
+}

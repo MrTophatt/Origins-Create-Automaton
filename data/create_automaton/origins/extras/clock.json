@@ -1,0 +1,13 @@
+{
+	"name": "Cuckoo Clock",
+	"description": "Have a display of the current in game time.",
+	"powers": [
+        "create_automaton:extras/clock"
+	],
+	"icon": {
+		"item": "create:cuckoo_clock"
+	},
+	"order": 1,
+	"impact": 1,
+	"hidden": false
+}

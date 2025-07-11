@@ -1,0 +1,2 @@
+scoreboard objectives add stress_meter dummy
+scoreboard objectives add constant_stress dummy

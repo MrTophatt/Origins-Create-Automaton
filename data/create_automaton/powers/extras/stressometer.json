@@ -1,0 +1,74 @@
+{
+    "hidden": true,
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:if_else_list",
+        "actions": [
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "resource": "create_automaton:stress_overstress-toggle",
+                            "comparison": "==",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "create_automaton:stress_stress-meter",
+                            "comparison": "<",
+                            "compare_to": 700
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:execute_command",
+                    "command": "/title @s actionbar {\"text\":\"Stress: \",\"color\":\"green\",\"extra\":[{\"score\":{\"name\":\"@s\",\"objective\":\"stress_meter\"}}]}"
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "resource": "create_automaton:stress_overstress-toggle",
+                            "comparison": "==",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "create_automaton:stress_stress-meter",
+                            "comparison": ">=",
+                            "compare_to": 700
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "create_automaton:stress_stress-meter",
+                            "comparison": "!=",
+                            "compare_to": 1000
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:execute_command",
+                    "command": "/title @s actionbar {\"text\":\"Stress: \",\"color\":\"yellow\",\"extra\":[{\"score\":{\"name\":\"@s\",\"objective\":\"stress_meter\"}}]}"
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:stress_overstress-toggle",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                "action": {
+                    "type": "origins:execute_command",
+                    "command": "/title @s actionbar {\"text\":\"Stress: \",\"color\":\"red\",\"extra\":[{\"score\":{\"name\":\"@s\",\"objective\":\"stress_meter\"}}]}"
+                }
+            }
+        ]
+    },
+    "interval": 1
+}

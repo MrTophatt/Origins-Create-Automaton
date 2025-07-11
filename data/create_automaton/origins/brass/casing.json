@@ -1,0 +1,12 @@
+{
+	"name": "Brass Casing",
+	"description": "The building block of the brass age, but alone is useless.",
+	"powers": [
+	],
+	"icon": {
+		"item": "create:brass_casing"
+	},
+	"order": 1,
+	"impact": 0,
+	"hidden": false
+}

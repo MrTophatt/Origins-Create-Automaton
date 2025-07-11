@@ -1,0 +1,70 @@
+{
+    "name": "Depressurize",
+    "description": "Naturally de-stress faster but at the cost being slower.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/star.png",
+            "text": "naturally de-stress 2x as much"
+        },
+        {
+            "type": "origins:keybind",
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Open/Close valve with %s"
+        }
+    ],
+    "type": "origins:multiple",
+
+    "toggle": {
+        "type": "origins:toggle",
+        "active_by_default": false,
+        "retain_state": false,
+        "key": {
+            "key": "key.origins.secondary_active"
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "create_automaton:stress_overstress-toggle",
+            "comparison": "==",
+            "compare_to": 0
+        }
+    },
+
+    "overstressed": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:toggle",
+            "power": "create_automaton:*_toggle"
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:power_active",
+                    "power": "create_automaton:*_toggle"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:stress_overstress-toggle",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        }
+    },
+
+    "slow": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "multiply_total",
+            "value": -0.15
+        },
+        "tick_rate": 1,
+        "condition": {
+            "type": "origins:power_active",
+            "power": "create_automaton:*_toggle"
+        }
+    }
+}

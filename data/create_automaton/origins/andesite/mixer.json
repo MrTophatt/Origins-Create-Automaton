@@ -1,0 +1,12 @@
+{
+	"name": "Mechanical Mixer",
+	"description": "Mixing It Up - NO IDEAS YET",
+	"powers": [
+	],
+	"icon": {
+		"item": "create:mechanical_mixer"
+	},
+	"order": 1,
+	"impact": 1,
+	"hidden": false
+}

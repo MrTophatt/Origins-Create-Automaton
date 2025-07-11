@@ -1,0 +1,19 @@
+{
+	"name": "Create: Automaton",
+	"description": "An automaton build with pieces from every age in the Create mod, what parts will you choose?",
+	"powers": [
+        "create_automaton:stress",
+        "create_automaton:iron-clad",
+        "create_automaton:machinery",
+        "create_automaton:self-repair",
+        "create_automaton:machine-like",
+        "create_automaton:fuel",
+        "create_automaton:extras/battery"
+	],
+	"icon": {
+		"item": "create:large_cogwheel"
+	},
+	"order": 1,
+	"impact": 3,
+	"hidden": false
+}

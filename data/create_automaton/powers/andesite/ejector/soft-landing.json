@@ -1,0 +1,6 @@
+{
+    "name": "Soft Landing",
+    "description": "Those ejectors are really springy and cushion your falls.",
+    "type": "origins:modify_falling",
+    "take_fall_damage": false
+}

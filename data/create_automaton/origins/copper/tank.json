@@ -1,0 +1,15 @@
+{
+	"name": "Fluid Tank",
+	"description": "Don't Cross the Streams!",
+	"powers": [
+        "create_automaton:copper/tank/intake",
+        "create_automaton:copper/tank/pour",
+        "create_automaton:copper/tank/cobblestone"
+	],
+	"icon": {
+		"item": "create:fluid_tank"
+	},
+	"order": 1,
+	"impact": 3,
+	"hidden": false
+}

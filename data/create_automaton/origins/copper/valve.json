@@ -1,0 +1,13 @@
+{
+	"name": "Copper Valve",
+	"description": "Pressure Release.",
+	"powers": [
+        "create_automaton:copper/valve/depressure"
+	],
+	"icon": {
+		"item": "create:copper_valve_handle"
+	},
+	"order": 1,
+	"impact": 2,
+	"hidden": false
+}

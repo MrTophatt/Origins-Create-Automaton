@@ -1,0 +1,503 @@
+{
+    "name": "Stress-o-Meter",
+    "description": "Your parts all take up stress, try not doing to many things in quick succession.",
+    "type": "origins:multiple",
+
+    "overstress-toggle": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "toggle": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "create_automaton:stress_overstress-toggle",
+            "change": 1
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "create_automaton:stress_stress-meter",
+            "comparison": "==",
+            "compare_to": 1000
+        }
+    },
+    "toggle2": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "create_automaton:stress_overstress-toggle",
+            "change": -1
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "create_automaton:stress_stress-meter",
+            "comparison": "==",
+            "compare_to": 0
+        }
+    },
+
+    "stress-meter": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1000,
+        "start_value": 0,
+        "hud_render": {
+            "sprite_location": "create_automaton:textures/gui/stress_bars.png",
+            "bar_index": 0,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "create_automaton:stress_overstress-toggle",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "create_automaton:stress_stress-meter",
+                        "comparison": "<",
+                        "compare_to": 700
+                    },
+                    {
+                        "type": "origins:power",
+                        "power": "create_automaton:extras/stressometer",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:living"
+                    }
+                ]
+            }
+        },
+        "max_action": {
+            "type": "origins:play_sound",
+            "sound": "create:steam",
+            "volume": 1,
+            "pitch": 0.6
+        }
+    },
+    "warn-stress-meter": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1000,
+        "start_value": 0,
+        "hud_render": {
+            "sprite_location": "create_automaton:textures/gui/stress_bars.png",
+            "bar_index": 1,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "create_automaton:stress_overstress-toggle",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "create_automaton:stress_stress-meter",
+                        "comparison": ">=",
+                        "compare_to": 700
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "create_automaton:stress_stress-meter",
+                        "comparison": "!=",
+                        "compare_to": 1000
+                    },
+                    {
+                        "type": "origins:power",
+                        "power": "create_automaton:extras/stressometer",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:living"
+                    }
+                ]
+            }
+        },
+        "max_action": {
+            "type": "origins:play_sound",
+            "sound": "create:steam",
+            "volume": 1,
+            "pitch": 0.6
+        }
+    },
+    "overstress-meter": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1000,
+        "start_value": 0,
+        "hud_render": {
+            "sprite_location": "create_automaton:textures/gui/stress_bars.png",
+            "bar_index": 2,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "create_automaton:stress_overstress-toggle",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:power",
+                        "power": "create_automaton:extras/stressometer",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:living"
+                    }
+                ]
+            }
+        },
+        "max_action": {
+            "type": "origins:play_sound",
+            "sound": "create:steam",
+            "volume": 1,
+            "pitch": 0.6
+        }
+    },
+
+    "constant-stress": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1000,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "tick": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "function create_automaton:store_stress"
+        },
+        "interval": 1
+    },
+
+    "stress": {
+        "type": "origins:action_on_callback",
+        "entity_action_gained": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "create_automaton:stress_constant-stress",
+                    "change": 0,
+                    "operation": "set"
+                }
+            ]
+        },
+        "entity_action_lost": {
+            "type": "origins:change_resource",
+            "resource": "create_automaton:stress_constant-stress",
+            "change": 0,
+            "operation": "set"
+        },
+        "entity_action_respawned": {
+            "type": "origins:change_resource",
+            "resource": "create_automaton:stress_stress-meter",
+            "change": 0,
+            "operation": "set"
+        },
+        "execute_chosen_when_orb": true
+    },
+    "set-constant": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:modify_resource",
+            "modifier": {
+                "operation": "set_total",
+                "value": 0,
+                "resource": "create_automaton:stress_constant-stress"
+            },
+            "resource": "create_automaton:stress_stress-meter"
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:command",
+                    "command": "execute if score @s stress_meter < @s constant_stress",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:stress_overstress-toggle",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
+        }
+    },
+
+    "set-same": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:modify_resource",
+                    "modifier": {
+                        "operation": "set_total",
+                        "value": 0,
+                        "resource": "create_automaton:stress_stress-meter"
+                    },
+                    "resource": "create_automaton:stress_warn-stress-meter"
+                },
+                {
+                    "type": "origins:modify_resource",
+                    "modifier": {
+                        "operation": "set_total",
+                        "value": 0,
+                        "resource": "create_automaton:stress_stress-meter"
+                    },
+                    "resource": "create_automaton:stress_overstress-meter"
+                }
+            ]
+        },
+        "interval": 1
+    },
+
+
+    "decrease": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:power_active",
+                "power": "create_automaton:copper/valve/depressure_toggle"
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "create_automaton:stress_stress-meter",
+                "change": -2
+            },
+            "else_action": {
+                "type": "origins:change_resource",
+                "resource": "create_automaton:stress_stress-meter",
+                "change": -1
+            }
+        },
+        "interval": 3,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:command",
+                    "command": "execute if score @s stress_meter > @s constant_stress",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:stress_overstress-toggle",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
+        }
+    },
+    "overstress-decrease": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "create_automaton:stress_stress-meter",
+            "change": -1
+        },
+        "interval": 5,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:stress_overstress-toggle",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:power",
+                    "power": "create_automaton:extras/flywheel",
+                    "inverted": true
+                }
+            ]
+        }
+    },
+    "overstress-decrease-flywheel": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "create_automaton:stress_stress-meter",
+            "change": -1
+        },
+        "interval": 4,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:stress_overstress-toggle",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:power",
+                    "power": "create_automaton:extras/flywheel"
+                }
+            ]
+        }
+    },
+
+    "increase": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "create_automaton:stress_stress-meter",
+            "change": 15
+        },
+        "interval": 40,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:stress_overstress-toggle",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:health",
+                    "comparison": "<",
+                    "compare_to": 10
+                }
+            ]
+        }
+    },
+    "increase2": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:power",
+                        "power": "create_automaton:extras/train-casing"
+                    },
+                    {
+                        "type": "origins:living"
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "create_automaton:stress_stress-meter",
+                "change": 50
+            },
+            "else_action": {
+                "type": "origins:change_resource",
+                "resource": "create_automaton:stress_stress-meter",
+                "change": 75
+            }
+        },
+        "cooldown": 5,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "create_automaton:stress_overstress-toggle",
+            "comparison": "==",
+            "compare_to": 0
+        }
+    },
+
+    "overstressed-no-movement": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "multiply_total",
+            "value": -0.80
+        },
+        "tick_rate": 1,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "create_automaton:stress_overstress-toggle",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+
+    "overstressed-title": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "title @s title {\"text\":\"OVERSTRESSED\",\"color\":\"red\",\"bold\":true,\"italic\":false}"
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "create:deny"
+                }
+            ]
+        },
+        "interval": 20,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "create_automaton:stress_overstress-toggle",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "warning": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "title @s title {\"text\":\"STRESS WARNING\",\"color\":\"gold\",\"bold\":true,\"italic\":false}"
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "create:deny"
+                }
+            ]
+        },
+        "interval": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:stress_overstress-toggle",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:stress_stress-meter",
+                    "comparison": ">=",
+                    "compare_to": 700
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:stress_stress-meter",
+                    "comparison": "!=",
+                    "compare_to": 1000
+                }
+            ]
+        }
+    }
+}

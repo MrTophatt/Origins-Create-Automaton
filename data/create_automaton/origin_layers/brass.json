@@ -1,0 +1,27 @@
+{
+    "order": 3,
+    "origins": [
+        {
+            "condition": {
+                "type": "origins:origin",
+                "origin": "create_automaton:automaton"
+            },
+            "origins": [
+                "create_automaton:brass/casing",
+                "create_automaton:brass/speed-controller",
+                "create_automaton:brass/crafter",
+                "create_automaton:brass/arm",
+                "create_automaton:brass/display-link",
+                "create_automaton:brass/cannon",
+                "create_automaton:brass/blaze"
+            ]
+        }
+    ],
+    "allow_random": true,
+    "exclude_random": [
+        "create_automaton:brass/casing"
+    ],
+    "name": "Brass Age",
+    "missing_name": "None",
+    "missing_description": "You currently do not have a brass age part"
+}

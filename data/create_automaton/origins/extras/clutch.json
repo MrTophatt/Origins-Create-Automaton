@@ -1,0 +1,13 @@
+{
+	"name": "Clutch",
+	"description": "When deactivated turn off an internal clutch, just barely saving you from total deactivation.",
+	"powers": [
+        "create_automaton:extras/clutch"
+	],
+	"icon": {
+		"item": "create:clutch"
+	},
+	"order": 1,
+	"impact": 3,
+	"hidden": false
+}
