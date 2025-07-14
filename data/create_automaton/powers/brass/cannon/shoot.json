@@ -15,7 +15,7 @@
     ],
     "type": "apugli:custom_projectile",
     "entity_id": "create_automaton:potato_projectile",
-    "texture_url": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c1/Potato_JE3_BE2.png/revision/latest?cb=20190430222727",
+    "texture_location": "create_automaton:textures/item/potato.png",
     "entity_action_before_firing": {
         "type": "origins:and",
         "actions": [
