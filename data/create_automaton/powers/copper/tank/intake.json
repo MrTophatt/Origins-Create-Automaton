@@ -69,12 +69,6 @@
             "resource": "create_automaton:*_water-resource",
             "change": 1000
         },
-        "condition": {
-            "type": "origins:resource",
-            "resource": "create_automaton:*_water-resource",
-            "comparison": "!=",
-            "compare_to": 4000
-        },
         "return_stack": {
             "item": "minecraft:bucket",
             "amount": 1
@@ -112,12 +106,6 @@
         "return_stack": {
             "item": "minecraft:bucket",
             "amount": 1
-        },
-        "condition": {
-            "type": "origins:resource",
-            "resource": "create_automaton:*_lava-resource",
-            "comparison": "!=",
-            "compare_to": 4000
         },
         "entity_action": {
             "type": "origins:change_resource",

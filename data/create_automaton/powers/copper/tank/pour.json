@@ -61,6 +61,10 @@
                     "type": "origins:change_resource",
                     "resource": "create_automaton:stress_stress-meter",
                     "change": 120
+                },
+                {
+                    "type": "origins:trigger_cooldown",
+                    "power": "create_automaton:copper/tank/cobblestone"
                 }
             ]
         },
@@ -89,6 +93,12 @@
                             "item": "minecraft:bucket"
                         }
                     }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:stress_overstress-toggle",
+                    "comparison": "==",
+                    "compare_to": 0
                 }
             ]
         }
@@ -151,6 +161,12 @@
                             "item": "minecraft:glass_bottle"
                         }
                     }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:stress_overstress-toggle",
+                    "comparison": "==",
+                    "compare_to": 0
                 }
             ]
         }
@@ -213,6 +229,12 @@
                             "item": "minecraft:bucket"
                         }
                     }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:stress_overstress-toggle",
+                    "comparison": "==",
+                    "compare_to": 0
                 }
             ]
         }

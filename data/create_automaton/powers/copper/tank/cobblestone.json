@@ -46,7 +46,7 @@
             }
         ]
     },
-    "cooldown": 5,
+    "cooldown": 2,
     "hud_render": {
         "should_render": false
     },
@@ -90,6 +90,12 @@
                     }
                 },
                 "inverted": true
+            },
+            {
+                "type": "origins:resource",
+                "resource": "create_automaton:stress_overstress-toggle",
+                "comparison": "==",
+                "compare_to": 0
             }
         ]
     }

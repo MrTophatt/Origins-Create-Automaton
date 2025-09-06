@@ -13,7 +13,7 @@
 
     "step-height": {
         "type": "apugli:step_height",
-        "lower_height": 1.0
+        "lower_height": 1.2
     },
 
     "slow": {

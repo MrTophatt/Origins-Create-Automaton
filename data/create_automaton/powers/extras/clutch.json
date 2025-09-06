@@ -5,7 +5,7 @@
     "revives": {
         "type": "origins:resource",
         "min": 0,
-        "max": 1,
+        "max": 2700,
         "start_value": 0,
         "hud_render": {
             "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
@@ -39,15 +39,78 @@
                 {
                     "type": "origins:change_resource",
                     "resource": "*:*_revives",
-                    "change": 1
+                    "change": 2700,
+                    "operation": "set"
                 }
             ]
         },
         "condition": {
             "type": "origins:resource",
             "resource": "*:*_revives",
-            "comparison": "<",
-            "compare_to": 1
+            "comparison": "==",
+            "compare_to": 0
         }
+    },
+
+    "prevent-overstress": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "create_automaton:stress_overstress-toggle",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "title @s clear"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "create_automaton:stress_stress-meter",
+                    "change": -600
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_revives",
+                    "change": 2700,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:feed",
+                    "food": -10,
+                    "saturation": -20
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:stress_overstress-toggle",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_revives",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
+        }
+    },
+
+    "tick-down": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_revives",
+            "change": -1
+        },
+        "interval": 20
     }
 }
