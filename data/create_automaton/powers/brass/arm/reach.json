@@ -5,7 +5,7 @@
         {
             "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/star.png",
-            "text": "Constant 200 stress used"
+            "text": "Constant 200 Stress"
         }
     ],
     "type": "origins:multiple",

@@ -2,7 +2,9 @@
 	"name": "Mechanical Drill",
 	"description": "Diggy Diggy Hole!",
 	"powers": [
-        "create_automaton:andesite/drill/drill"
+        "create_automaton:andesite/drill/drill",
+        "create_automaton:andesite/drill/efficiency",
+        "create_automaton:andesite/drill/exhaust"
 	],
 	"icon": {
 		"item": "create:mechanical_drill"

@@ -1,6 +1,6 @@
 {
 	"name": "Clutch",
-	"description": "When deactivated turn off an internal clutch, just barely saving you from total deactivation.",
+	"description": "When deactivated or overstressed turn off an internal clutch, just barely saving you.",
 	"powers": [
         "create_automaton:extras/clutch"
 	],

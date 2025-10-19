@@ -2,8 +2,9 @@
 	"name": "Mechanical Press",
 	"description": "Bonk!",
 	"powers": [
-        "create_automaton:andesite/press/press2",
-        "create_automaton:andesite/press/damage"
+        "create_automaton:andesite/press/press",
+        "create_automaton:andesite/press/damage",
+        "create_automaton:andesite/press/slow-attack"
 	],
 	"icon": {
 		"item": "create:mechanical_press"

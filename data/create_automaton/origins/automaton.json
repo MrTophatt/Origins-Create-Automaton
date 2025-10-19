@@ -7,8 +7,7 @@
         "create_automaton:machinery",
         "create_automaton:self-repair",
         "create_automaton:machine-like",
-        "create_automaton:fuel",
-        "create_automaton:extras/battery"
+        "create_automaton:fuel"
 	],
 	"icon": {
 		"item": "create:large_cogwheel"

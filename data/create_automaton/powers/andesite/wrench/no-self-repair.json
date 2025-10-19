@@ -1,0 +1,15 @@
+{
+    "name": "No Auto Repair",
+    "description": "You lose the §7§nAuto Repair§r ability.",
+    "type": "origins:action_on_callback",
+    "entity_action_gained": {
+        "type": "origins:revoke_power",
+        "power": "create_automaton:self-repair",
+        "source": "create_automaton:automaton"
+    },
+    "entity_action_added": {
+        "type": "origins:revoke_power",
+        "power": "create_automaton:self-repair",
+        "source": "create_automaton:automaton"
+    }
+}

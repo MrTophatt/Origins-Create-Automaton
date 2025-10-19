@@ -1,0 +1,9 @@
+{
+    "name": "Floaty",
+    "description": "The constant blowing of your fans make you a little lighter and easily thrown around.",
+    "type": "origins:action_when_hit",
+    "bientity_action": {
+        "type": "origins:add_velocity",
+        "z": 2
+    }
+}

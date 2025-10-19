@@ -9,6 +9,7 @@
             "origins": [
                 "create_automaton:extras/cover",
                 "create_automaton:extras/stressometer",
+                "create_automaton:extras/speedometer",
                 "create_automaton:extras/seat",
                 "create_automaton:extras/clock",
                 "create_automaton:extras/casing",

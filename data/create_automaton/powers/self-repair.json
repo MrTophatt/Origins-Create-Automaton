@@ -1,7 +1,30 @@
 {
-    "name": "Self Repair",
+    "name": "Auto Repair",
     "description": "Stand still for a few seconds to activate your internal repair system. The speed of your repair is based off how much fuel you have.",
     "type": "origins:multiple",
+
+    "remove-if-wench": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:revoke_power",
+            "power": "create_automaton:self-repair",
+            "source": "create_automaton:automaton"
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:living"
+                },
+                {
+                    "type": "origins:power",
+                    "power": "create_automaton:andesite/wrench/no-self-repair",
+                    "source": "create_automaton:andesite/wrench"
+                }
+            ]
+        },
+        "interval": 1
+    },
 
     "counter": {
         "type": "origins:resource",

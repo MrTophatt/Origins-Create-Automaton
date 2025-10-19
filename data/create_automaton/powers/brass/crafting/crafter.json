@@ -5,7 +5,7 @@
         {
             "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/star.png",
-            "text": "Uses 80 stress"
+            "text": "80 Stress/Use"
         },
         {
             "type": "origins:keybind",

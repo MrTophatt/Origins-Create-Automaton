@@ -2,7 +2,8 @@
 	"name": "Potato Cannon",
 	"description": "Fwoomp!",
 	"powers": [
-        "create_automaton:brass/cannon/shoot"
+        "create_automaton:brass/cannon/shoot",
+        "create_automaton:brass/cannon/potato-diet"
 	],
 	"icon": {
 		"item": "create:potato_cannon"

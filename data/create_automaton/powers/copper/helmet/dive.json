@@ -1,11 +1,11 @@
 {
     "name": "Water Proof",
-    "description": "you can breathe and see underwater perfectly fine, and swim a little faster.",
+    "description": "you can breathe and see underwater perfectly fine, aswell as swim a little faster.",
     "badges": [
         {
             "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/star.png",
-            "text": "Constant 120 stress used"
+            "text": "Constant 120 Stress"
         }
     ],
     "type": "origins:multiple",

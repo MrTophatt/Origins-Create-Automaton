@@ -1,0 +1,13 @@
+{
+	"name": "Speedometer",
+	"description": "Display your speed in a readable format.",
+	"powers": [
+        "create_automaton:extras/speedometer"
+	],
+	"icon": {
+		"item": "create:speedometer"
+	},
+	"order": 1,
+	"impact": 1,
+	"hidden": false
+}

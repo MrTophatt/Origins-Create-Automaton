@@ -1,0 +1,14 @@
+{
+	"name": "Wrench",
+	"description": "A tool for builders who like to keep their hands dirty.",
+	"powers": [
+        "create_automaton:andesite/wrench/heal",
+        "create_automaton:andesite/wrench/no-self-repair"
+	],
+	"icon": {
+		"item": "create:wrench"
+	},
+	"order": 1,
+	"impact": 2,
+	"hidden": false
+}

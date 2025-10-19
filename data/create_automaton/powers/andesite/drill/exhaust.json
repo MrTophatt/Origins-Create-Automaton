@@ -1,0 +1,9 @@
+{
+    "name": "Dull Bit",
+    "description": "Drilling requires a lot of energy, thus you exhaust much faster",
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+        "operation": "multiply_base_additive",
+        "value": 1
+    }
+}

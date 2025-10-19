@@ -1,11 +1,11 @@
 {
-    "name": "Wake up Call",
+    "name": "§6§nWake up Call§r",
     "description": "Wake up and let out some steam! You attack faster, stronger, and harder!",
     "badges": [
         {
             "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/star.png",
-            "text": "Uses 250 stress"
+            "text": "250 Stress/Use"
         },
         {
             "type": "origins:keybind",
@@ -32,6 +32,7 @@
         "start_value": 0,
         "hud_render": {
             "sprite_location": "create_automaton:textures/gui/stress_bars.png",
+            "inverted": true,
             "bar_index": 4,
             "condition": {
                 "type": "origins:resource",
@@ -70,6 +71,7 @@
         "start_value": 99999,
         "hud_render": {
             "sprite_location": "create_automaton:textures/gui/stress_bars.png",
+            "inverted": true,
             "bar_index": 5,
             "condition": {
                 "type": "origins:resource",

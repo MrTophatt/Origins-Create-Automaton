@@ -1,0 +1,6 @@
+{
+    "name": "Nightvision Goggles",
+    "description": "Your eyes have been given nightvision cababilities.",
+    "type": "origins:night_vision",
+    "strength": 1
+}

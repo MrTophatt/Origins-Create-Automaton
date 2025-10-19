@@ -3,7 +3,7 @@
     "description": "Using your iron you deal extra damage.",
     "type": "origins:modify_damage_dealt",
     "modifier": {
-        "operation": "multiply_total",
+        "operation": "multiply_base",
         "value": 0.20
     }
 }

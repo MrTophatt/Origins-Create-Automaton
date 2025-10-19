@@ -5,7 +5,7 @@
         {
             "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/star.png",
-            "text": "De-stresses 200 stress"
+            "text": "De-stresses 300 Stress"
         },
         {
             "type": "origins:keybind",
@@ -20,7 +20,7 @@
             {
                 "type": "origins:change_resource",
                 "resource": "create_automaton:stress_stress-meter",
-                "change": -200
+                "change": -300
             },
             {
                 "type": "origins:play_sound",

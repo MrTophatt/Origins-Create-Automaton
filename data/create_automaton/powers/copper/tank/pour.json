@@ -5,7 +5,7 @@
         {
             "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/star.png",
-            "text": "120 stress/bucket"
+            "text": "120 Stress/Bucket"
         },
         {
             "type": "origins:tooltip",

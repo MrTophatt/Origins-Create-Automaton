@@ -5,7 +5,7 @@
         {
             "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/star.png",
-            "text": "Uses 10 stress/3 ticks"
+            "text": "3 Stress/1 Ticks"
         },
         {
             "type": "origins:keybind",
@@ -23,20 +23,31 @@
                 {
                     "type": "origins:change_resource",
                     "resource": "create_automaton:stress_stress-meter",
-                    "change": 10
+                    "change": 3
                 }
             ]
         },
-        "cooldown": 3,
+        "cooldown": 1,
         "key": {
             "key": "key.saveToolbarActivator",
             "continuous": true
         },
         "condition": {
-            "type": "origins:resource",
-            "resource": "create_automaton:stress_overstress-toggle",
-            "comparison": "==",
-            "compare_to": 0
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:stress_overstress-toggle",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:brass/speed-controller/shock_cooldown",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
         }
     },
 
@@ -44,7 +55,7 @@
         "type": "origins:conditioned_attribute",
         "modifier": {
             "attribute": "minecraft:generic.movement_speed",
-            "value": 0.3,
+            "value": 0.5,
             "operation": "multiply_total"
         },
         "tick_rate": 1,
@@ -63,6 +74,12 @@
                         "key": "key.saveToolbarActivator",
                         "continuous": true
                     }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:brass/speed-controller/shock_cooldown",
+                    "comparison": "==",
+                    "compare_to": 0
                 }
             ]
         }

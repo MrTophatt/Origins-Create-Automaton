@@ -1,0 +1,25 @@
+{
+    "name": "Vulnerable",
+    "description": "§7§nIron Clad§r's effects are halved",
+    "type": "origins:multiple",
+
+    "health": {
+        "type": "origins:attribute",
+        "modifier": {
+            "name": "Max health increase",
+            "attribute": "minecraft:generic.max_health",
+            "value": -5,
+            "operation": "addition"
+        }
+    },
+
+    "armor": {
+        "type": "origins:attribute",
+        "modifier": {
+            "name": "Max health increase",
+            "attribute": "minecraft:generic.armor",
+            "value": -2,
+            "operation": "addition"
+        }
+    }
+}

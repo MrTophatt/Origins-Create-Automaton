@@ -1,0 +1,18 @@
+{
+    "name": "Fire Resistant",
+    "description": "You are built with high-heat resistant metal. Fire cannot hurt you.",
+    "type": "origins:invulnerability",
+    "damage_condition": {
+        "type": "origins:or",
+        "conditions": [
+            {
+                "type": "origins:name",
+                "name": "inFire"
+            },
+            {
+                "type": "origins:name",
+                "name": "onFire"
+            }
+        ]
+    }
+}

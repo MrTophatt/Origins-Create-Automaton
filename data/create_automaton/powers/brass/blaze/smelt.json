@@ -6,7 +6,7 @@
         {
             "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/star.png",
-            "text": "4 stress/item smelted"
+            "text": "4 Stress/Item Smelted"
         },
         {
             "type": "origins:keybind",
@@ -38,10 +38,28 @@
         "continuous": true
     },
     "condition": {
-        "type": "origins:equipped_item",
-        "equipment_slot": "mainhand",
-        "item_condition": {
-            "type": "origins:smeltable"
-        }
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:smeltable"
+                }
+            },
+            {
+                "type": "origins:resource",
+                "resource": "create_automaton:stress_overstress-toggle",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:fluid_height",
+                "fluid": "minecraft:water",
+                "comparison": ">",
+                "compare_to": 0,
+                "inverted": true
+            }
+        ]
     }
 }

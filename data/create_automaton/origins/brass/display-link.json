@@ -2,7 +2,8 @@
 	"name": "Display Link",
 	"description": "Big Data.",
 	"powers": [
-		"create_automaton:brass/display/info"
+		"create_automaton:brass/display/info",
+		"create_automaton:brass/display/nightvision"
 	],
 	"icon": {
 		"item": "create:display_link"

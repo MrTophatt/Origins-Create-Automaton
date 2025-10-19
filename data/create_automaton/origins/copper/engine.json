@@ -2,7 +2,8 @@
 	"name": "Steam Engine",
 	"description": "Full Steam.",
 	"powers": [
-        "create_automaton:copper/engine/destress"
+        "create_automaton:copper/engine/destress",
+        "create_automaton:copper/engine/no-yellow"
 	],
 	"icon": {
 		"item": "create:steam_engine"

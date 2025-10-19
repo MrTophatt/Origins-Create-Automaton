@@ -5,7 +5,7 @@
         {
             "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/star.png",
-            "text": "De-stresses 7 stress/0.5 seconds"
+            "text": "De-stresses 7 Stress/0.5 Seconds"
         },
         {
             "type": "origins:keybind",

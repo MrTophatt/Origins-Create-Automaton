@@ -1,0 +1,9 @@
+{
+    "hidden": true,
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:execute_command",
+        "command": "function create_automaton:speedometer/calculate_speed"
+    },
+    "interval": 2
+}

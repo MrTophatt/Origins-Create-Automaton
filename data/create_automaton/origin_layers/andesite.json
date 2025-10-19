@@ -10,6 +10,7 @@
                 "create_automaton:andesite/casing",
                 "create_automaton:andesite/crank",
                 "create_automaton:andesite/toolbox",
+                "create_automaton:andesite/wrench",
                 "create_automaton:andesite/press",
                 "create_automaton:andesite/fan",
                 "create_automaton:andesite/drill",

@@ -5,12 +5,12 @@
         {
             "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/star.png",
-            "text": "2 stress/cobblestone created"
+            "text": "2 Stress/Cobblestone"
         },
         {
             "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/info.png",
-            "text": "10 mB of water + lava = 1 cobblestone"
+            "text": "10 mB of water + 10 mB lava = 1 cobblestone"
         },
         {
             "type": "origins:keybind",

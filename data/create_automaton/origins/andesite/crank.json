@@ -2,7 +2,8 @@
 	"name": "Hand Crank",
 	"description": "Workout Session.",
 	"powers": [
-        "create_automaton:andesite/crank/crank"
+        "create_automaton:andesite/crank/crank",
+        "create_automaton:andesite/crank/friendly-help"
 	],
 	"icon": {
 		"item": "create:hand_crank"

@@ -1,0 +1,140 @@
+{
+    "name": "Manual Repair",
+    "description": "Start repairing yourself overtime without the need of standing still.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/star.png",
+            "text": "Constant 50 stress used | 30 stress/0.5 seconds"
+        },
+        {
+            "type": "origins:keybind",
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Repair yourself with %s"
+        }
+    ],
+    "type": "origins:multiple",
+
+    "stress": {
+        "type": "origins:action_on_callback",
+        "entity_action_gained": {
+            "type": "origins:execute_command",
+            "command": "tag @s add hasWrench"
+        },
+        "entity_action_lost": {
+            "type": "origins:execute_command",
+            "command": "tag @s remove hasWrench"
+        },
+        "execute_chosen_when_orb": true
+    },
+
+    "windup": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 11,
+        "start_value": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "reset-windup": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "create_automaton:andesite/wrench/heal_windup",
+            "change": 9999,
+            "operation": "set"
+        },
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:stress_overstress-toggle",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:relative_health",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "apugli:key_pressed",
+                    "key": {
+                        "key": "key.origins.primary_active"
+                    },
+                    "inverted": true
+                }
+            ]
+        },
+        "interval": 1
+    },
+
+    "activate": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "create_automaton:andesite/wrench/heal_windup",
+            "change": -1
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:stress_overstress-toggle",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:relative_health",
+                    "comparison": "!=",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "cooldown": 1,
+        "key": {
+            "key": "key.origins.primary_active",
+            "continuous": true
+        }
+    },
+
+    "heal": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:play_sound",
+                    "sound": "create:wrench_remove_compounded_1",
+                    "volume": 1,
+                    "pitch": 0.8,
+                    "category": "players"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "create_automaton:stress_stress-meter",
+                    "change": 30
+                },
+                {
+                    "type": "origins:heal",
+                    "amount": 1.5
+                }
+            ]
+        },
+        "interval": 10,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:andesite/wrench/heal_windup",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
+        }
+    }
+}

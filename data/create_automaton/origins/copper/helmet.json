@@ -2,7 +2,8 @@
 	"name": "Diving Helmet",
 	"description": "Ready for the Depths.",
 	"powers": [
-        "create_automaton:copper/helmet/dive"
+        "create_automaton:copper/helmet/dive",
+        "create_automaton:copper/helmet/heavy-suit"
 	],
 	"icon": {
 		"item": "create:copper_diving_helmet"

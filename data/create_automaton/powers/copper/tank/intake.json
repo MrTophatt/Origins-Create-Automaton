@@ -5,7 +5,7 @@
         {
             "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/star.png",
-            "text": "Constant 100 stress used"
+            "text": "Constant 100 Stress"
         },
         {
             "type": "origins:tooltip",
@@ -34,8 +34,8 @@
         "max": 4000,
         "start_value": 0,
         "hud_render": {
-            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
-            "bar_index": 15
+            "sprite_location": "create_automaton:textures/gui/tank_bars.png",
+            "bar_index": 0
         }
     },
     "lava-resource": {
@@ -44,8 +44,8 @@
         "max": 4000,
         "start_value": 0,
         "hud_render": {
-            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
-            "bar_index": 15
+            "sprite_location": "create_automaton:textures/gui/tank_bars.png",
+            "bar_index": 1
         }
     },
 

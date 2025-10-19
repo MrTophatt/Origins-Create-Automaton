@@ -1,0 +1,43 @@
+{
+    "name": "Battle Cry",
+    "description": "For every kill you get during §6Wake up Call§r, add 2 seconds to the timer.",
+    "type": "origins:self_action_on_kill",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:play_sound",
+                "sound": "create:steam",
+                "volume": 1,
+                "pitch": 1.2,
+                "category": "players"
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "create_automaton:copper/whistle/call_active-timer",
+                "change": -40
+            }
+        ]
+    },
+    "cooldown": 5,
+    "hud_render": {
+        "should_render": false
+    },
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "create_automaton:stress_overstress-toggle",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:resource",
+                "resource": "create_automaton:copper/whistle/call_state",
+                "comparison": "==",
+                "compare_to": 1
+            }
+        ]
+    }
+}

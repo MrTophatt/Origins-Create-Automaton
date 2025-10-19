@@ -19,11 +19,39 @@
         "effects": [
             "minecraft:regeneration",
             "minecraft:instant_health",
+            "minecraft:instant_damage",
             "minecraft:wither",
             "minecraft:poison",
             "minecraft:health_boost",
             "minecraft:hunger",
-            "minecraft:saturation"
+            "minecraft:saturation",
+            "minecraft:nausea",
+            "minecraft:water_breathing"
         ]
+    },
+
+    "hurt": {
+        "type": "apugli:custom_hurt_sound",
+        "sound": {
+            "sound": {
+                "sound": "create:wrench_remove_compounded_1",
+                "type": "player",
+                "volume": 1,
+                "pitch": 1.4
+            },
+            "weight": 1
+        }
+    },
+    "death": {
+        "type": "apugli:custom_death_sound",
+        "sound": {
+            "sound": {
+                "sound": "create:steam",
+                "type": "player",
+                "volume": 1,
+                "pitch": 0.6
+            },
+            "weight": 1
+        }
     }
 }

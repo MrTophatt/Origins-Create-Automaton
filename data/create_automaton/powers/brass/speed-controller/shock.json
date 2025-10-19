@@ -1,0 +1,56 @@
+{
+    "name": "Torque Shock",
+    "description": "While sped up, if you are hurt your speed controller overstressed and needs to cool-off.",
+    "type": "origins:multiple",
+
+    "cooldown": {
+        "type": "origins:cooldown",
+        "cooldown": 100,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+
+    "hurt": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:trigger_cooldown",
+                    "power": "create_automaton:brass/speed-controller/shock_cooldown"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "create_automaton:stress_stress-meter",
+                    "change": 15
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:stress_overstress-toggle",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:brass/speed-controller/shock_cooldown",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "apugli:key_pressed",
+                    "key": {
+                        "key": "key.saveToolbarActivator",
+                        "continuous": true
+                    }
+                }
+            ]
+        },
+        "cooldown": 5
+    }
+}

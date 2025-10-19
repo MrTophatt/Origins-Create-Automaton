@@ -2,7 +2,8 @@
 	"name": "Mechanical Arm",
 	"description": "Busy Hands.",
 	"powers": [
-        "create_automaton:brass/arm/reach"
+        "create_automaton:brass/arm/reach",
+		"origins:no_shield"
 	],
 	"icon": {
 		"item": "create:mechanical_arm"

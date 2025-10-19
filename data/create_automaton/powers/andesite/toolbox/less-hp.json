@@ -1,0 +1,18 @@
+{
+    "name": "Empty Space",
+    "description": "The toolbox requires you to have some empty space, leaving you with a little less durability.",
+    "type": "origins:attribute",
+    "modifiers": [
+        {
+            "attribute": "minecraft:generic.max_health",
+            "operation": "addition",
+            "value": -2
+        },
+        {
+            "attribute": "minecraft:generic.armor",
+            "operation": "addition",
+            "value": -1
+        }
+    ],
+    "update_health": true
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Heavy Equipment",
+    "description": "The equipment you need to be waterproof makes you incredibly heavy when on land.",
+    "type": "origins:attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.movement_speed",
+        "operation": "multiply_total",
+        "value": -0.25
+    },
+    "condition": {
+        "type": "origins:fluid_height",
+        "fluid": "minecraft:water",
+        "comparison": ">",
+        "compare_to": 0,
+        "inverted": true
+    }
+}

@@ -3,7 +3,8 @@
 	"description": "Wind Maker.",
 	"powers": [
         "create_automaton:andesite/fan/hover",
-        "create_automaton:andesite/fan/speed"
+        "create_automaton:andesite/fan/speed",
+        "create_automaton:andesite/fan/knockback"
 	],
 	"icon": {
 		"item": "create:encased_fan"

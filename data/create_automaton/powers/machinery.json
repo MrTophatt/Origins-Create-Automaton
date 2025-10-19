@@ -8,6 +8,32 @@
         "modifier": {
             "operation": "set_total",
             "value": 0
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:stress_overstress-toggle",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "apugli:key_pressed",
+                    "key": {
+                        "key": "key.saveToolbarActivator"
+                    }
+                },
+                {
+                    "type": "origins:exists"
+                },
+                {
+                    "type": "origins:power",
+                    "power": "create_automaton:brass/speed-controller/jump",
+                    "source": "create_automaton:brass/speed-controller"
+                }
+            ],
+            "inverted": true
         }
     },
 

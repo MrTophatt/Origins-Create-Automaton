@@ -2,7 +2,9 @@
 	"name": "Toolbox",
 	"description": "A trusty box to hold your stuff.",
 	"powers": [
-        "create_automaton:andesite/toolbox/toolbox"
+        "create_automaton:andesite/toolbox/toolbox",
+        "create_automaton:andesite/toolbox/no-stress",
+        "create_automaton:andesite/toolbox/less-hp"
 	],
 	"icon": {
 		"item": "create:brown_toolbox"

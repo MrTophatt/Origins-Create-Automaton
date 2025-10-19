@@ -2,7 +2,9 @@
 	"name": "Rotation Speed Controller",
 	"description": "Engineers hate this simple trick!",
 	"powers": [
-        "create_automaton:brass/speed-controller/speed"
+        "create_automaton:brass/speed-controller/speed",
+        "create_automaton:brass/speed-controller/jump",
+        "create_automaton:brass/speed-controller/shock"
 	],
 	"icon": {
 		"item": "create:rotation_speed_controller"

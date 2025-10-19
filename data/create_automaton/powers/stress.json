@@ -277,8 +277,31 @@
         "entity_action": {
             "type": "origins:if_else",
             "condition": {
-                "type": "origins:power_active",
-                "power": "create_automaton:copper/valve/depressure_toggle"
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:power_active",
+                        "power": "create_automaton:copper/valve/depressure_toggle"
+                    },
+                    {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "create_automaton:stress_stress-meter",
+                                "comparison": ">=",
+                                "compare_to": 700
+                            },
+                            {
+                                "type": "origins:power",
+                                "power": "create_automaton:copper/engine/no-yellow"
+                            },
+                            {
+                                "type": "origins:living"
+                            }
+                        ]
+                    }
+                ]
             },
             "if_action": {
                 "type": "origins:change_resource",
@@ -448,7 +471,8 @@
                 },
                 {
                     "type": "origins:play_sound",
-                    "sound": "create:deny"
+                    "sound": "create:deny",
+                    "pitch": 0.8
                 }
             ]
         },
@@ -471,7 +495,8 @@
                 },
                 {
                     "type": "origins:play_sound",
-                    "sound": "create:deny"
+                    "sound": "create:deny",
+                    "pitch": 1.5
                 }
             ]
         },

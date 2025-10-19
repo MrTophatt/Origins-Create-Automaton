@@ -5,7 +5,7 @@
         {
             "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/star.png",
-            "text": "Uses 20 stress/block broken"
+            "text": "20 Stress/Block Broken"
         },
         {
             "type": "origins:keybind",
@@ -35,7 +35,7 @@
                 {
                     "type": "origins:hardness",
                     "comparison": "<",
-                    "compare_to": 3
+                    "compare_to": 4
                 }
             ]
         },
@@ -48,7 +48,7 @@
     "breaker-speed": {
         "type": "origins:modify_break_speed",
         "modifier": {
-            "value": 0.08,
+            "value": 0.09,
             "operation": "addition"
         },
         "condition": {
