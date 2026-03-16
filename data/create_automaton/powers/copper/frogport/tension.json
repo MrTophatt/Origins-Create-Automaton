@@ -1,0 +1,5 @@
+{
+    "name": "Tension Fatigue",
+    "description": "Using your grapple too often causes strain and may cause a cooldown.",
+    "type": "origins:simple"
+}

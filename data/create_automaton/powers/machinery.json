@@ -19,7 +19,7 @@
                     "compare_to": 0
                 },
                 {
-                    "type": "apugli:key_pressed",
+                    "type": "sync:key_pressed",
                     "key": {
                         "key": "key.saveToolbarActivator"
                     }
@@ -38,8 +38,12 @@
     },
 
     "step-height": {
-        "type": "apugli:step_height",
-        "lower_height": 1.2
+        "type": "origins:attribute",
+        "modifier": {
+            "attribute": "porting_lib:step_height_addition",
+            "value": 1.2,
+            "operation": "addition"
+        }
     },
 
     "slow": {
@@ -52,7 +56,7 @@
     },
 
     "fov": {
-        "type": "apugli:modify_fov",
+        "type": "eggolib:modify_fov",
         "modifier": {
             "operation": "multiply_base_multiplicative",
             "value": 0.176

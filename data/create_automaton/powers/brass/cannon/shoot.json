@@ -13,16 +13,13 @@
             "text": "Shoot a potato using %s"
         }
     ],
-    "type": "apugli:custom_projectile",
+    "type": "sync:custom_projectile",
     "entity_id": "create_automaton:potato_projectile",
     "texture_location": "create_automaton:textures/item/potato.png",
+    "sound": "create:fwoomp",
     "entity_action_before_firing": {
         "type": "origins:and",
         "actions": [
-            {
-                "type": "origins:play_sound",
-                "sound": "create:fwoomp"
-            },
             {
                 "type": "origins:change_resource",
                 "resource": "create_automaton:stress_stress-meter",

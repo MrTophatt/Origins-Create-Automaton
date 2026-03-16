@@ -5,7 +5,7 @@
         {
             "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/star.png",
-            "text": "80 Stress/Use"
+            "text": "30 Stress/Use"
         },
         {
             "type": "origins:keybind",
@@ -23,7 +23,7 @@
             {
                 "type": "origins:change_resource",
                 "resource": "create_automaton:stress_stress-meter",
-                "change": 80
+                "change": 30
             }
         ]
     },

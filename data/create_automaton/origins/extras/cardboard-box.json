@@ -1,0 +1,13 @@
+{
+	"name": "Cardboard Box",
+	"description": "Crouch to activate camouflage and go invisible, and start with a fun tube!",
+	"powers": [
+        "create_automaton:extras/cardboard-box"
+	],
+	"icon": {
+		"item": "create:cardboard_package_12x12"
+	},
+	"order": 1,
+	"impact": 2,
+	"hidden": false
+}

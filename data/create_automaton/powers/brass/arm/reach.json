@@ -5,7 +5,7 @@
         {
             "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/star.png",
-            "text": "Constant 200 Stress"
+            "text": "Constant 150 Stress"
         }
     ],
     "type": "origins:multiple",
@@ -56,5 +56,29 @@
             }
         },
         "interval": 1
+    },
+
+    "reach-forge": {
+        "type": "origins:conditioned_attribute",
+        "modifiers": [
+            {
+                "name": "Extra Reach block reach",
+                "attribute": "forge:block_reach",
+                "value": 0.5,
+                "operation": "multiply_total"
+            },
+            {
+                "name": "Extra Reach entity reach",
+                "attribute": "forge:entity_reach",
+                "value": 0.5,
+                "operation": "multiply_total"
+            }
+        ],
+        "condition": {
+            "type": "origins:resource",
+            "resource": "create_automaton:stress_overstress-toggle",
+            "comparison": "==",
+            "compare_to": 0
+        }
     }
 }

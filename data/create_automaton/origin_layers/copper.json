@@ -9,6 +9,7 @@
             "origins": [
                 "create_automaton:copper/casing",
                 "create_automaton:copper/engine",
+                "create_automaton:copper/frogport",
                 "create_automaton:copper/helmet",
                 "create_automaton:copper/tank",
                 "create_automaton:copper/valve",

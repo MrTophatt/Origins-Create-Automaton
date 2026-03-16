@@ -1,0 +1,36 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+
+    "toggle": {
+        "type": "origins:toggle",
+        "active_by_default": true,
+        "key": {
+            "key": "key.spectatorOutlines"
+        }
+    },
+
+    "invis": {
+        "type": "origins:invisibility",
+        "render_armor": false,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:power_active",
+                    "power": "*:*_toggle"
+                },
+                {
+                    "type": "origins:sneaking"
+                }
+            ]
+        }
+    },
+
+    "tube": {
+        "type": "origins:starting_equipment",
+        "stack": {
+            "item": "create:cardboard_sword"
+        }
+    }
+}

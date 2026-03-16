@@ -15,11 +15,10 @@ scoreboard players operation $Calc Pos0 += $Calc Pos2
 scoreboard players operation $Input SquareRoot = $Calc Pos0
 function create_automaton:speedometer/square_root/exe
 
-
 #Display Decimals
 scoreboard players operation $Output Constant = $Output SquareRoot
-scoreboard players operation $Output SquareRoot /= $Constant100 Constant
-scoreboard players operation $Output Constant %= $Constant100 Constant
+scoreboard players operation $Output SquareRoot /= 100 Constants
+scoreboard players operation $Output Constant %= 100 Constants
 
 scoreboard players operation @s Pos0 = $Temp Pos0
 scoreboard players operation @s Pos2 = $Temp Pos2

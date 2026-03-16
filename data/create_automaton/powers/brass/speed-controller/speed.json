@@ -5,7 +5,7 @@
         {
             "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/star.png",
-            "text": "3 Stress/1 Ticks"
+            "text": "3 Stress/Tick"
         },
         {
             "type": "origins:keybind",
@@ -69,7 +69,7 @@
                     "compare_to": 0
                 },
                 {
-                    "type": "apugli:key_pressed",
+                    "type": "sync:key_pressed",
                     "key": {
                         "key": "key.saveToolbarActivator",
                         "continuous": true

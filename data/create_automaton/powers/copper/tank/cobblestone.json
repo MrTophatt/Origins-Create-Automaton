@@ -18,85 +18,127 @@
             "text": "Create cobblestone using %s while not holding a bucket/bottle"
         }
     ],
-    "type": "origins:active_self",
-    "entity_action": {
-        "type": "origins:and",
-        "actions": [
-            {
-                "type": "origins:change_resource",
-                "resource": "create_automaton:copper/tank/intake_water-resource",
-                "change": -10
-            },
-            {
-                "type": "origins:change_resource",
-                "resource": "create_automaton:copper/tank/intake_lava-resource",
-                "change": -10
-            },
-            {
-                "type": "origins:change_resource",
-                "resource": "create_automaton:stress_stress-meter",
-                "change": 2
-            },
-            {
-                "type": "origins:give",
-                "stack": {
-                    "item": "minecraft:cobblestone",
-                    "amount": 1
+    "type": "origins:multiple",
+
+    "windup": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 20,
+        "hud_render": {
+            "should_render": false
+        },
+        "start_value": 0
+    },
+
+    "increase-windup": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "create_automaton:copper/tank/cobblestone_windup",
+            "change": 1
+        },
+        "falling_action": {
+            "type": "origins:change_resource",
+            "resource": "create_automaton:copper/tank/cobblestone_windup",
+            "operation": "set",
+            "change": 0
+        },
+        "interval": 1,
+        "condition": {
+            "type": "sync:key_pressed",
+            "key": {
+                "key": "key.origins.secondary_active"
+            }
+        }
+    },
+
+    "make-cobblestone": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "create_automaton:copper/tank/intake_water-resource",
+                    "change": -10
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "create_automaton:copper/tank/intake_lava-resource",
+                    "change": -10
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "create_automaton:stress_stress-meter",
+                    "change": 2
+                },
+                {
+                    "type": "origins:give",
+                    "stack": {
+                        "item": "minecraft:cobblestone",
+                        "amount": 1
+                    }
                 }
-            }
-        ]
-    },
-    "cooldown": 2,
-    "hud_render": {
-        "should_render": false
-    },
-    "key": {
-        "key": "key.origins.secondary_active",
-        "continuous": true
-    },
-    "condition": {
-        "type": "origins:and",
-        "conditions": [
-            {
-                "type": "origins:resource",
-                "resource": "create_automaton:copper/tank/intake_water-resource",
-                "comparison": ">=",
-                "compare_to": 10
-            },
-            {
-                "type": "origins:resource",
-                "resource": "create_automaton:copper/tank/intake_lava-resource",
-                "comparison": ">=",
-                "compare_to": 10
-            },
-            {
-                "type": "origins:equipped_item",
-                "equipment_slot": "mainhand",
-                "item_condition": {
-                    "type": "origins:ingredient",
-                    "ingredient": {
-                        "item": "minecraft:bucket"
-                    }
+            ]
+        },
+        "cooldown": 2,
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.origins.secondary_active",
+            "continuous": true
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:copper/tank/cobblestone_windup",
+                    "comparison": "==",
+                    "compare_to": 20
                 },
-                "inverted": true
-            },
-            {
-                "type": "origins:equipped_item",
-                "equipment_slot": "mainhand",
-                "item_condition": {
-                    "type": "origins:ingredient",
-                    "ingredient": {
-                        "item": "minecraft:glass_bottle"
-                    }
+                {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:copper/tank/intake_water-resource",
+                    "comparison": ">=",
+                    "compare_to": 10
                 },
-                "inverted": true
-            },
-            {
-                "type": "origins:resource",
-                "resource": "create_automaton:stress_overstress-toggle",
-                "comparison": "==",
-                "compare_to": 0
-            }
-        ]
+                {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:copper/tank/intake_lava-resource",
+                    "comparison": ">=",
+                    "compare_to": 10
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:bucket"
+                        }
+                    },
+                    "inverted": true
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:glass_bottle"
+                        }
+                    },
+                    "inverted": true
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:stress_overstress-toggle",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
+        }
     }
 }

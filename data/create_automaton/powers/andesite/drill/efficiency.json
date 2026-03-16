@@ -1,18 +1,38 @@
 {
     "name": "Mining Efficiency",
-    "description": "Pickaxes act as if they have Efficiency I.",
-    "type": "apugli:modify_enchantment_level",
-    "enchantment": "minecraft:efficiency",
-    "modifiers": [
-        {
-            "operation": "addition",
-            "value": 1
+    "description": "Pickaxes act as if they have an extra level of Efficiency and Fortune.",
+    "type": "origins:multiple",
+
+    "effeciency": {
+        "type": "sync:modify_enchantment_level",
+        "enchantment": "minecraft:efficiency",
+        "modifiers": [
+            {
+                "operation": "addition",
+                "value": 1
+            }
+        ],
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "tag": "minecraft:pickaxes"
+            }
         }
-    ],
-    "item_condition": {
-        "type": "origins:ingredient",
-        "ingredient": {
-            "tag": "minecraft:pickaxes"
+    },
+    "fortune": {
+        "type": "sync:modify_enchantment_level",
+        "enchantment": "minecraft:fortune",
+        "modifiers": [
+            {
+                "operation": "addition",
+                "value": 1
+            }
+        ],
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "tag": "minecraft:pickaxes"
+            }
         }
     }
 }

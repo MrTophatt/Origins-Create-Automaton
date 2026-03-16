@@ -109,127 +109,7 @@
         }
     },
 
-    "heal-20": {
-        "type": "origins:action_over_time",
-        "entity_action": {
-            "type": "origins:heal",
-            "amount": 1
-        },
-        "interval": 10,
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:food_level",
-                    "comparison": "==",
-                    "compare_to": 20
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "create_automaton:self-repair_counter",
-                    "comparison": "==",
-                    "compare_to": 5
-                }
-            ]
-        }
-    },
-    "heal-19": {
-        "type": "origins:action_over_time",
-        "entity_action": {
-            "type": "origins:heal",
-            "amount": 1
-        },
-        "interval": 12,
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:food_level",
-                    "comparison": "==",
-                    "compare_to": 19
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "create_automaton:self-repair_counter",
-                    "comparison": "==",
-                    "compare_to": 5
-                }
-            ]
-        }
-    },
-    "heal-18": {
-        "type": "origins:action_over_time",
-        "entity_action": {
-            "type": "origins:heal",
-            "amount": 1
-        },
-        "interval": 14,
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:food_level",
-                    "comparison": "==",
-                    "compare_to": 18
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "create_automaton:self-repair_counter",
-                    "comparison": "==",
-                    "compare_to": 5
-                }
-            ]
-        }
-    },
-    "heal-17": {
-        "type": "origins:action_over_time",
-        "entity_action": {
-            "type": "origins:heal",
-            "amount": 1
-        },
-        "interval": 16,
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:food_level",
-                    "comparison": "==",
-                    "compare_to": 17
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "create_automaton:self-repair_counter",
-                    "comparison": "==",
-                    "compare_to": 5
-                }
-            ]
-        }
-    },
-    "heal-16": {
-        "type": "origins:action_over_time",
-        "entity_action": {
-            "type": "origins:heal",
-            "amount": 1
-        },
-        "interval": 18,
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:food_level",
-                    "comparison": "==",
-                    "compare_to": 16
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "create_automaton:self-repair_counter",
-                    "comparison": "==",
-                    "compare_to": 5
-                }
-            ]
-        }
-    },
-    "heal-15": {
+    "heal-max": {
         "type": "origins:action_over_time",
         "entity_action": {
             "type": "origins:heal",
@@ -241,7 +121,7 @@
             "conditions": [
                 {
                     "type": "origins:food_level",
-                    "comparison": "==",
+                    "comparison": ">=",
                     "compare_to": 15
                 },
                 {
@@ -253,115 +133,19 @@
             ]
         }
     },
-    "heal-14": {
+    "heal-medium": {
         "type": "origins:action_over_time",
         "entity_action": {
             "type": "origins:heal",
             "amount": 1
         },
-        "interval": 24,
+        "interval": 50,
         "condition": {
             "type": "origins:and",
             "conditions": [
                 {
                     "type": "origins:food_level",
-                    "comparison": "==",
-                    "compare_to": 14
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "create_automaton:self-repair_counter",
-                    "comparison": "==",
-                    "compare_to": 5
-                }
-            ]
-        }
-    },
-    "heal-13": {
-        "type": "origins:action_over_time",
-        "entity_action": {
-            "type": "origins:heal",
-            "amount": 1
-        },
-        "interval": 28,
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:food_level",
-                    "comparison": "==",
-                    "compare_to": 13
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "create_automaton:self-repair_counter",
-                    "comparison": "==",
-                    "compare_to": 5
-                }
-            ]
-        }
-    },
-    "heal-12": {
-        "type": "origins:action_over_time",
-        "entity_action": {
-            "type": "origins:heal",
-            "amount": 1
-        },
-        "interval": 32,
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:food_level",
-                    "comparison": "==",
-                    "compare_to": 12
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "create_automaton:self-repair_counter",
-                    "comparison": "==",
-                    "compare_to": 5
-                }
-            ]
-        }
-    },
-    "heal-11": {
-        "type": "origins:action_over_time",
-        "entity_action": {
-            "type": "origins:heal",
-            "amount": 1
-        },
-        "interval": 36,
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:food_level",
-                    "comparison": "==",
-                    "compare_to": 11
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "create_automaton:self-repair_counter",
-                    "comparison": "==",
-                    "compare_to": 5
-                }
-            ]
-        }
-    },
-    "heal-10": {
-        "type": "origins:action_over_time",
-        "entity_action": {
-            "type": "origins:heal",
-            "amount": 1
-        },
-        "interval": 40,
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:food_level",
-                    "comparison": "==",
+                    "comparison": ">=",
                     "compare_to": 10
                 },
                 {
@@ -373,103 +157,7 @@
             ]
         }
     },
-    "heal-9": {
-        "type": "origins:action_over_time",
-        "entity_action": {
-            "type": "origins:heal",
-            "amount": 1
-        },
-        "interval": 46,
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:food_level",
-                    "comparison": "==",
-                    "compare_to": 9
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "create_automaton:self-repair_counter",
-                    "comparison": "==",
-                    "compare_to": 5
-                }
-            ]
-        }
-    },
-    "heal-8": {
-        "type": "origins:action_over_time",
-        "entity_action": {
-            "type": "origins:heal",
-            "amount": 1
-        },
-        "interval": 52,
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:food_level",
-                    "comparison": "==",
-                    "compare_to": 8
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "create_automaton:self-repair_counter",
-                    "comparison": "==",
-                    "compare_to": 5
-                }
-            ]
-        }
-    },
-    "heal-7": {
-        "type": "origins:action_over_time",
-        "entity_action": {
-            "type": "origins:heal",
-            "amount": 1
-        },
-        "interval": 60,
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:food_level",
-                    "comparison": "==",
-                    "compare_to": 7
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "create_automaton:self-repair_counter",
-                    "comparison": "==",
-                    "compare_to": 5
-                }
-            ]
-        }
-    },
-    "heal-6": {
-        "type": "origins:action_over_time",
-        "entity_action": {
-            "type": "origins:heal",
-            "amount": 1
-        },
-        "interval": 70,
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:food_level",
-                    "comparison": "==",
-                    "compare_to": 6
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "create_automaton:self-repair_counter",
-                    "comparison": "==",
-                    "compare_to": 5
-                }
-            ]
-        }
-    },
-    "heal-5": {
+    "heal-min": {
         "type": "origins:action_over_time",
         "entity_action": {
             "type": "origins:heal",
@@ -481,80 +169,8 @@
             "conditions": [
                 {
                     "type": "origins:food_level",
-                    "comparison": "==",
+                    "comparison": ">=",
                     "compare_to": 5
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "create_automaton:self-repair_counter",
-                    "comparison": "==",
-                    "compare_to": 5
-                }
-            ]
-        }
-    },
-    "heal-4": {
-        "type": "origins:action_over_time",
-        "entity_action": {
-            "type": "origins:heal",
-            "amount": 1
-        },
-        "interval": 90,
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:food_level",
-                    "comparison": "==",
-                    "compare_to": 4
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "create_automaton:self-repair_counter",
-                    "comparison": "==",
-                    "compare_to": 5
-                }
-            ]
-        }
-    },
-    "heal-3": {
-        "type": "origins:action_over_time",
-        "entity_action": {
-            "type": "origins:heal",
-            "amount": 1
-        },
-        "interval": 96,
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:food_level",
-                    "comparison": "==",
-                    "compare_to": 3
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "create_automaton:self-repair_counter",
-                    "comparison": "==",
-                    "compare_to": 5
-                }
-            ]
-        }
-    },
-    "heal-2": {
-        "type": "origins:action_over_time",
-        "entity_action": {
-            "type": "origins:heal",
-            "amount": 1
-        },
-        "interval": 100,
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:food_level",
-                    "comparison": "==",
-                    "compare_to": 2
                 },
                 {
                     "type": "origins:resource",

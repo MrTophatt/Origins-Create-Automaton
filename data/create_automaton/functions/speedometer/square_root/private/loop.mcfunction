@@ -1,7 +1,7 @@
 ##by NOPEname
 
 scoreboard players operation $Output SquareRoot += $Temp SquareRoot
-scoreboard players operation $Output SquareRoot /= $Constant2 Constant
+scoreboard players operation $Output SquareRoot /= 2 Constants
 
 scoreboard players operation $Temp SquareRoot = $Input SquareRoot
 scoreboard players operation $Temp SquareRoot /= $Output SquareRoot

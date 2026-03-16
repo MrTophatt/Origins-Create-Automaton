@@ -8,6 +8,6 @@
 		"item": "create:copper_valve_handle"
 	},
 	"order": 1,
-	"impact": 2,
+	"impact": 1,
 	"hidden": false
 }

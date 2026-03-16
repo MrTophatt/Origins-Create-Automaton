@@ -1,0 +1,314 @@
+{
+    "name": "Sticky Tongue",
+    "description": "Using the tongue of a frogport, you're able to grapple onto surfaces with ease.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/star.png",
+            "text": "70 Stress/Grapple deploy"
+        },
+        {
+            "type": "origins:keybind",
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Deploy and Retract grapple using %s"
+        }
+    ],
+    "type": "origins:multiple",
+
+    "strain": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 100,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+
+    "cooldown": {
+        "type": "origins:cooldown",
+        "cooldown": 1000,
+        "hud_render": {
+            "bar_index": 8
+        }
+    },
+
+    "decrease": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_strain",
+            "change": -1
+        },
+        "interval": 15,
+        "condition": {
+            "type": "origins:command",
+            "command": "execute as @e[type=armor_stand,nbt={Tags:['grapple_hook']},distance=..50.5] if score @s GrappleUUID = @p[distance=0] GrappleUUID",
+            "comparison": ">",
+            "compare_to": 0,
+            "inverted": true
+        }
+    },
+    
+    "callback": {
+        "type": "origins:action_on_callback",
+        "entity_action_gained": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "tag @s add grapple_user"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scoreboard objectives add GrappleUUID dummy"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute store result score @s GrappleUUID run data get entity @s UUID[0]"
+                }
+            ]
+        },
+        "entity_action_lost": {
+            "type": "origins:execute_command",
+            "command": "tag @s remove grapple_user"
+        }
+    },
+
+
+    "spawn": {
+        "type": "origins:active_self",
+        "key": {
+            "key": "key.origins.secondary_active"
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "create_automaton:stress_overstress-toggle",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_cooldown",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "cooldown": 5,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:command",
+                "command": "execute as @e[type=armor_stand,nbt={Tags:['grapple_hook']},distance=..50.5] if score @s GrappleUUID = @p[distance=0] GrappleUUID",
+                "comparison": ">",
+                "compare_to": 0
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "execute as @e[type=armor_stand,nbt={Tags:['grapple_hook']},distance=..50.5] if score @s GrappleUUID = @p[distance=0] GrappleUUID run kill @s"
+                    },
+                    {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_strain",
+                            "comparison": ">",
+                            "compare_to": 90
+                        },
+                        "if_action": {
+                            "type": "origins:trigger_cooldown",
+                            "power": "*:*_cooldown"
+                        }
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "sync:raycast",
+                "distance": 50,
+                "entity": false,
+                "shape_type": "collider",
+                "fluid_handling": "none",
+                "hit_action": {
+                    "type": "origins:execute_command",
+                    "command": "playsound minecraft:block.dispenser.launch master @a[distance=..55] ~ ~ ~ 0.4 0.6"
+                },
+                "command_at_hit": "function create_automaton:grapple/grapple_hook_spawn",
+                "command_hit_offset": 0.5
+            }
+        }
+    },
+
+
+    "slow_falling": {
+        "type": "origins:modify_falling",
+        "take_fall_damage": false,
+        "velocity": 0.04,
+        "condition": {
+            "type": "origins:command",
+            "command": "execute as @e[type=armor_stand,nbt={Tags:['grapple_hook']},distance=..50.5] if score @s GrappleUUID = @p[distance=0] GrappleUUID",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    },
+
+
+    "pull": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:selector_action",
+            "selector": "@e[type = minecraft:armor_stand,distance=7.5..50.5,nbt={Tags:['grapple_hook']}]",
+            "bientity_action": {
+                "type": "origins:invert",
+                "action": {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:target_condition",
+                        "condition": {
+                           "type": "origins:sneaking"
+                        }
+                    },
+                    "if_action": {
+                        "type": "origins:add_velocity",
+                        "z": -0.035
+                    },
+                    "else_action": {
+                        "type": "origins:add_velocity",
+                        "z": -0.1
+                    }
+                }
+            },
+            "bientity_condition": {
+                "type": "sync:command",
+                "command": "execute as %t if score @s GrappleUUID = @p[distance=0] GrappleUUID",
+                "comparison": "==",
+                "compare_to": 1
+            }
+        },
+        "condition": {
+            "type": "origins:command",
+            "command": "execute as @e[type=armor_stand,nbt={Tags:['grapple_hook']},distance=..50.5] if score @s GrappleUUID = @p[distance=0] GrappleUUID",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    },
+
+
+    "forward": {
+        "type": "origins:active_self",
+        "key": {
+            "key": "key.forward",
+            "continuous": true
+        },
+        "entity_action": {
+            "type": "origins:add_velocity",
+            "z": 0.05,
+            "space": "local"
+        },
+        "condition": {
+            "type": "origins:command",
+            "command": "execute as @e[type=armor_stand,nbt={Tags:['grapple_hook']},distance=..50.5] if score @s GrappleUUID = @p[distance=0] GrappleUUID",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    },
+
+
+    "back": {
+        "type": "origins:active_self",
+        "key": {
+            "key": "key.back",
+            "continuous": true
+        },
+        "entity_action": {
+            "type": "origins:add_velocity",
+            "z": -0.05,
+            "space": "local"
+        },
+        "condition": {
+            "type": "origins:command",
+            "command": "execute as @e[type=armor_stand,nbt={Tags:['grapple_hook']},distance=..50.5] if score @s GrappleUUID = @p[distance=0] GrappleUUID",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    },
+
+
+    "left": {
+        "type": "origins:active_self",
+        "key": {
+            "key": "key.left",
+            "continuous": true
+        },
+        "entity_action": {
+            "type": "origins:add_velocity",
+            "x": 0.05,
+            "space": "local"
+        },
+        "condition": {
+            "type": "origins:command",
+            "command": "execute as @e[type=armor_stand,nbt={Tags:['grapple_hook']},distance=..50.5] if score @s GrappleUUID = @p[distance=0] GrappleUUID",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    },
+
+
+    "right": {
+        "type": "origins:active_self",
+        "key": {
+            "key": "key.right",
+            "continuous": true
+        },
+        "entity_action": {
+            "type": "origins:add_velocity",
+            "x": -0.05,
+            "space": "local"
+        },
+        "condition": {
+            "type": "origins:command",
+            "command": "execute as @e[type=armor_stand,nbt={Tags:['grapple_hook']},distance=..50.5] if score @s GrappleUUID = @p[distance=0] GrappleUUID",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    },
+
+
+    "up": {
+        "type": "origins:active_self",
+        "key": {
+            "key": "key.jump",
+            "continuous": true
+        },
+        "entity_action": {
+            "type": "origins:selector_action",
+            "selector": "@e[type = minecraft:armor_stand,distance = 1..7.5,sort=nearest,limit=1,nbt={Tags:['grapple_hook']}]",
+            "bientity_action": {
+                "type": "origins:invert",
+                "action": {
+                    "type": "origins:add_velocity",
+                    "z": -0.1
+                }
+            },
+            "bientity_condition": {
+                "type": "sync:command",
+                "command": "execute as %t if score @s GrappleUUID = @p[distance=0] GrappleUUID",
+                "comparison": "==",
+                "compare_to": 1
+            }
+        },
+        "condition": {
+            "type": "origins:command",
+            "command": "execute as @e[type=armor_stand,nbt={Tags:['grapple_hook']},distance=..7.5] if score @s GrappleUUID = @p[distance=0] GrappleUUID",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    }
+}

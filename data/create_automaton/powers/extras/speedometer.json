@@ -5,5 +5,5 @@
         "type": "origins:execute_command",
         "command": "function create_automaton:speedometer/calculate_speed"
     },
-    "interval": 2
+    "interval": 1
 }

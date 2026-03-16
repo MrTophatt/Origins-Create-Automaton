@@ -5,7 +5,7 @@
         {
             "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/star.png",
-            "text": "5 Stress/Tick"
+            "text": "3 Stress/Tick"
         },
         {
             "type": "origins:keybind",
@@ -27,7 +27,7 @@
             {
                 "type": "origins:change_resource",
                 "resource": "create_automaton:stress_stress-meter",
-                "change": 5
+                "change": 3
             },
             {
                 "type": "origins:add_velocity",

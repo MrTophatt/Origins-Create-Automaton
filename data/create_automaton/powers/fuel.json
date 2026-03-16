@@ -3,7 +3,7 @@
     "type": "origins:multiple",
 
     "coal": {
-        "type": "apugli:edible_item",
+        "type": "sync:edible_item",
         "item_condition": {
             "type": "origins:ingredient",
             "ingredient": {
@@ -15,12 +15,15 @@
             "saturation": 0.6,
             "meat": false
         },
-        "use_action": "eat"
+        "item_action": {
+            "type": "origins:consume",
+            "amount": 1
+        }
     },
 
     "remove-if-cannon": {
         "type": "origins:action_over_time",
-        "entity_action": {
+        "rising_action": {
             "type": "origins:revoke_power",
             "power": "create_automaton:fuel",
             "source": "create_automaton:automaton"

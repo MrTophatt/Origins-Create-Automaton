@@ -5,7 +5,7 @@
         {
             "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/star.png",
-            "text": "20 Stress/Block Broken"
+            "text": "15 Stress/Block Broken"
         },
         {
             "type": "origins:keybind",
@@ -48,7 +48,7 @@
     "breaker-speed": {
         "type": "origins:modify_break_speed",
         "modifier": {
-            "value": 0.09,
+            "value": 0.15,
             "operation": "addition"
         },
         "condition": {
@@ -62,7 +62,7 @@
         "entity_action": {
             "type": "origins:change_resource",
             "resource": "create_automaton:stress_stress-meter",
-            "change": 20
+            "change": 15
         },
         "condition": {
             "type": "origins:power_active",

@@ -60,7 +60,7 @@
                     "compare_to": 1
                 },
                 {
-                    "type": "apugli:key_pressed",
+                    "type": "sync:key_pressed",
                     "key": {
                         "key": "key.origins.primary_active"
                     },

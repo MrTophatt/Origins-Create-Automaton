@@ -1,0 +1,53 @@
+{
+    "type": "origins:multiple",
+
+    "loop": {
+        "type": "origins:action_over_time",
+        "interval": 2,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:command",
+                "command": "execute as @a[nbt={Tags:['grapple_user']},distance=..50.5] if score @s GrappleUUID = @e[distance=0,limit=1] GrappleUUID",
+                "comparison": "==",
+                "compare_to": 1
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "execute as @a[nbt={Tags:['grapple_user']},distance=..50.5] if score @s GrappleUUID = @e[distance=0,limit=1] GrappleUUID run teleport @e[distance=0] ~ ~ ~ facing entity @s"
+                    },
+                    {
+                        "type": "origins:raycast",
+                        "distance": 50.5,
+                        "block": false,
+                        "entity": true,
+                        "shape_type": "visual",
+                        "fluid_handling": "any",
+                        "command_along_ray": "particle dust 0.294 1.000 0.039 1",
+                        "command_step": 0.5
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "execute as @a[nbt={Tags:['grapple_user']},distance=..55] if score @s GrappleUUID = @e[distance=0,limit=1] GrappleUUID run execute at @s run playsound minecraft:block.tripwire.detach master @a[distance=..16] ~ ~ ~ 1 1.6"
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "kill @s"
+                    }
+                ]
+            }
+        }
+    },
+
+    "prevent_use": {
+        "type": "origins:prevent_being_used"
+    }
+}

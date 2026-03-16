@@ -5,7 +5,7 @@
         {
             "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/star.png",
-            "text": "De-stresses 7 Stress/0.5 Seconds"
+            "text": "De-stresses 8 Stress/0.5 Seconds"
         },
         {
             "type": "origins:keybind",
@@ -20,7 +20,7 @@
             {
                 "type": "origins:change_resource",
                 "resource": "create_automaton:stress_stress-meter",
-                "change": -7
+                "change": -8
             },
             {
                 "type": "origins:play_sound",

@@ -5,7 +5,7 @@
         {
             "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/star.png",
-            "text": "120 Stress/Bucket"
+            "text": "60 Stress/Bucket"
         },
         {
             "type": "origins:tooltip",
@@ -60,7 +60,7 @@
                 {
                     "type": "origins:change_resource",
                     "resource": "create_automaton:stress_stress-meter",
-                    "change": 120
+                    "change": 60
                 },
                 {
                     "type": "origins:trigger_cooldown",
@@ -132,7 +132,7 @@
                 {
                     "type": "origins:change_resource",
                     "resource": "create_automaton:stress_stress-meter",
-                    "change": 30
+                    "change": 15
                 }
             ]
         },
@@ -200,7 +200,7 @@
                 {
                     "type": "origins:change_resource",
                     "resource": "create_automaton:stress_stress-meter",
-                    "change": 120
+                    "change": 60
                 }
             ]
         },

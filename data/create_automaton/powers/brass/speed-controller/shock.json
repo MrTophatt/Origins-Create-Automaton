@@ -43,7 +43,7 @@
                     "compare_to": 0
                 },
                 {
-                    "type": "apugli:key_pressed",
+                    "type": "sync:key_pressed",
                     "key": {
                         "key": "key.saveToolbarActivator",
                         "continuous": true

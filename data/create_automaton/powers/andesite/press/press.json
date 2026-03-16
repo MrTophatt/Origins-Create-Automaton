@@ -272,7 +272,7 @@
         },
         "interval": 1,
         "condition": {
-            "type": "apugli:key_pressed",
+            "type": "sync:key_pressed",
             "key": {
                 "key": "key.origins.primary_active",
                 "continuous": true
