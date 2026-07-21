@@ -2,7 +2,8 @@
 	"name": "Frogport",
 	"description": "Hungry Hoppers.",
 	"powers": [
-        "create_automaton:copper/frogport/grapple"
+        "create_automaton:copper/frogport/grapple",
+        "create_automaton:copper/frogport/tension"
 	],
 	"icon": {
 		"item": "create:package_frogport"

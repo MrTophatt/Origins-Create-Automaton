@@ -53,13 +53,5 @@
             "value": -0.3,
             "operation": "multiply_total"
         }
-    },
-
-    "fov": {
-        "type": "eggolib:modify_fov",
-        "modifier": {
-            "operation": "multiply_base_multiplicative",
-            "value": 0.176
-        }
     }
 }

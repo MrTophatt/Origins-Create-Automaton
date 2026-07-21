@@ -62,7 +62,8 @@
                 {
                     "type": "sync:key_pressed",
                     "key": {
-                        "key": "key.origins.primary_active"
+                        "key": "key.origins.primary_active",
+                        "continuous": true
                     },
                     "inverted": true
                 }

@@ -11,5 +11,10 @@
         "type": "origins:revoke_power",
         "power": "create_automaton:self-repair",
         "source": "create_automaton:automaton"
+    },
+    "entity_action_lost": {
+        "type": "origins:grant_power",
+        "power": "create_automaton:self-repair",
+        "source": "create_automaton:automaton"
     }
 }
